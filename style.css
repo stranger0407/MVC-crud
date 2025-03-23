@@ -1,0 +1,140 @@
+*{
+    margin:0;
+    padding:0 ;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    background-color: rgb(160, 160, 207);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-x: hidden;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:1rem;
+    gap: 2rem;
+}
+#sort_by{
+    font-size: larger;
+    font-weight: 800;
+}
+.function{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+#sort_feild{
+    background-color: rgb(143, 169, 169);
+    height: 2rem;
+    border-radius:0.4rem;
+}
+#order{
+    background-color: rgb(143, 169, 169);
+    height: 2rem;
+    border-radius:0.4rem;
+}
+#sort_btn{
+    width: 5rem;
+    height: 2rem;
+    border-radius:0.4rem;
+    border: none;
+}
+#sort_btn:hover{
+    outline:2px solid green;
+}
+#add_new_user{
+    width: 10rem;
+    height: 2rem;
+    border-radius:0.4rem;
+    border: none;
+    margin-left: 5rem;
+    background-color: blueviolet;
+    
+}
+#add_new_user:hover{
+    outline:2px solid green;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user_list_header{
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    background-color: aliceblue;
+}
+.user_list{
+    background-color: beige;
+    width: 100%;
+}
+.user_list_item{
+    display: flex;
+    width: 100%;
+    height: 2rem;
+}
+.user_list_first_name{
+    width: 12rem;
+    border: 1px solid rgb(17, 16, 16);
+    text-align: center;
+    
+}
+.user_list_last_name{
+    width: 12rem;
+    border: 1px solid rgb(17, 16, 16);
+    text-align: center;
+}
+.user_list_email{
+    width: 20rem;
+    border: 1px solid rgb(17, 16, 16);
+    text-align: center;
+}
+.user_list_username{
+    width: 8rem;
+    border: 1px solid rgb(17, 16, 16);
+    text-align: center;
+}
+.user_list_age{
+    width: 3rem;
+    border: 1px solid rgb(17, 16, 16);
+    text-align: center;
+}
+.user_list_gender{
+    width: 6rem;
+    border: 1px solid rgb(17, 16, 16);
+    text-align: center;
+}
+.edit-btn{
+    width: 4rem;
+    border: 1px solid rgb(17, 16, 16);
+    text-align: center;
+    background-color: rgb(194, 201, 178);
+}
+.edit-btn:hover{
+    /* border:2px solid green; */
+    background-color: rgb(193, 123, 159);
+}
+.delete-btn{
+    width: 6rem;
+    border: 1px solid rgb(17, 16, 16);
+    text-align: center;
+    background-color: rgb(194, 201, 178);
+}
+.delete-btn:hover{
+    background-color: rgb(193, 123, 159);
+}
+
+
+
+
+
+
