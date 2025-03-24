@@ -3,6 +3,7 @@ class View{
         this. user_list=document.querySelector('.user_list');
     }
     render(data){
+      this.user_list.innerHTML="";  
       data.forEach(element => {
           const user=document.createElement('div');
           const first_name=document.createElement('span');
@@ -38,7 +39,7 @@ class View{
           user.appendChild(gender);
           user.appendChild(editbtn);
           user.appendChild(deletebtn);
-          console.log(user)
+          
           this.user_list.appendChild(user);
           
       });
@@ -47,7 +48,7 @@ class View{
 
     }
     sortbtn(){
-
+       
     }
 }
 class Model{
@@ -61,10 +62,12 @@ class Model{
    
     }
     addUser(){
-
+        
     }
-    sortUser(){
-
+    async sortUser(sortfeild1,sortfeild2){
+        const response=await fetch( `${this.url}?sortBy=${sortfeild2}&order=${sortfeild1}`);
+        const data=await response.json();
+        return data; 
     }
 
 }
@@ -73,19 +76,22 @@ class Controller{
        this.Model=Model;
        this.View=View;
        this.init();
-        
+       document.getElementById('sort-submit').addEventListener('click',this.handleSort.bind(this));
   }  
   async init(){
       const val=await this.Model.getUsers();
-      // console.log(val);
+    //   console.log(val);
       this.View.render(val.users);
-      
   } 
   handleAdd(){
-
+      
   } 
-  handleSort(){
-
+  async handleSort(){
+      const sortfeild1=document.getElementById('order').value;
+      const sortfeild2=document.getElementById('sort-feild').value;
+      const data=await this.Model.sortUser(sortfeild1,sortfeild2);
+      console.log(data.users);
+      this.View.render(data.users);
   } 
 }
 const app=new Controller(new Model,new View);
