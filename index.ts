@@ -18,8 +18,6 @@ class View{
           deletebtn.className='delete-btn';
           editbtn.textContent='Edit';
           deletebtn.textContent='Delete';
-          deletebtn.value=element.id;
-          editbtn.value=element.id;
           user.className='user_list_item';
           first_name.className='user_list_first_name';
           last_name.className='user_list_last_name';
@@ -91,11 +89,11 @@ class Controller{
       const sortfeild1=document.getElementById('order').value;
       const sortfeild2=document.getElementById('sort-feild').value;
       const data=await this.Model.sortUser(sortfeild1,sortfeild2);
+      console.log(data.users);
       this.View.render(data.users);
   }
   async handleDelete(){
-      const value1=document.querySelector('.delete-btn').value;
-      console.log(value1);
+      
   } 
 }
 const app=new Controller(new Model,new View);
